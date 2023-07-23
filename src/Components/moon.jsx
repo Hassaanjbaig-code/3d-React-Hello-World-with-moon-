@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import * as THREE from 'three';
 import moonImage from '../Image/moon.png';
-import { useControls } from 'leva';
+// import { useControls } from 'leva';
 
 const Moon = (props) => {
     const mesh = useRef();
@@ -22,9 +22,11 @@ const Moon = (props) => {
         }
     });
 
-    const { intensity } = useControls({
-        value: 1 
-    })
+    // const { x,y , z } = useControls({
+    //     x: { value: 50, min: 0, max: 1000 },
+    //     y: { value: 50, min: 0, max: 1000 }, 
+    //     z: { value: 50, min: 0, max: 1000 } 
+    // })
 
     return (
         <>
@@ -38,8 +40,7 @@ const Moon = (props) => {
                 <meshStandardMaterial map={texture} attach="material" transparent roughness={0.1} metalness={0.1} />
                 {hover &&
                     (
-                        // <spotLight ref={spotlightRef} color={'white'} intensity={1.5} decay={1} position={[-29.7, 1000, -20]} angle={30} />
-                        <directionalLight  intensity={intensity} position={ [0, 0, 0 ]}  />
+                        <spotLight ref={spotlightRef} color={'white'} intensity={1.5} decay={1} position={[ -28, -30, 10]} angle={30} />
                     )}
             </mesh>
         </>
