@@ -1,4 +1,15 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .Size {
   width: 100% !important;
   height: 100vh !important;
+}
+
+.shadow {
+  filter: drop-shadow(16px 16px 20px white) invert(70%);
 }

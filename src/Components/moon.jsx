@@ -13,13 +13,14 @@ const Moon = (props) => {
   return (
     <mesh
         ref={mesh}
-        position={[2, 1.5, 0]}
+        position={[9, 4, -3]}
         >
             <sphereGeometry
                 attach="geometry"
-                args={[ 1.2, 80, 40 ]}  // Width, Height and Depth of the sphere
+                args={[ 2, 90, 90 ]}  // Width, Height and Depth of the sphere
                 smoothness = {5}
                 { ...props }
+                className="shadow"
             />
             <meshStandardMaterial
                 map={texture}
