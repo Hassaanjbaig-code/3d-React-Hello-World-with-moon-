@@ -7,13 +7,14 @@ extend({ TextGeometry })
 
 export default function Text() {
     const font = new FontLoader().parse(myFont);
-
     return (
         <mesh position={[-8, -2, 0]}> { /* text="Hello World!" coordinates={[10, 5, 2]} */}
             <textGeometry args={['Hassaan Baig', {
-                font, size: 2, height: 0.2, curveSegments: 5
-            }]} />
-            <meshLambertMaterial attach='material' color={'light blue'} />
+                font, size: 2, height: 0.2
+            }]} >
+            {/* <meshLambertMaterial attach='material' color={0xFFFFFF} /> */}
+            <meshPhysicalMaterial attach='material' color={0xFFFFFF}/>
+            </ textGeometry>
         </mesh>
     )
 }
